@@ -1,0 +1,43 @@
+# SwiftLint Configuration for WCPSS Alerts
+
+excluded:
+  - DerivedData
+  - .build
+  - Pods
+  - Carthage
+
+disabled_rules:
+  - identifier_name  # Allow short names like xs, sm, md for design tokens
+  - line_length      # Handled by SwiftFormat
+  - redundant_sendable
+
+opt_in_rules:
+  - empty_count
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+
+force_cast: warning
+force_try: warning
+force_unwrapping: warning
+
+file_length:
+  warning: 500
+  error: 1000
+
+type_body_length:
+  warning: 300
+  error: 500
+
+function_body_length:
+  warning: 50
+  error: 100
+
+cyclomatic_complexity:
+  warning: 15
+  error: 25
+
+nesting:
+  type_level: 3
+  function_level: 3
+
+reporter: xcode

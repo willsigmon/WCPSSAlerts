@@ -1,0 +1,87 @@
+name: WCPSSAlerts
+options:
+  bundleIdPrefix: com.wcpss
+  deploymentTarget:
+    iOS: "18.0"
+  developmentLanguage: en
+  createIntermediateGroups: true
+  xcodeVersion: "16.0"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    ENABLE_PREVIEWS: YES
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    PRODUCT_NAME: "WCPSS Alerts"
+    INFOPLIST_KEY_CFBundleDisplayName: "WCPSS Alerts"
+    INFOPLIST_KEY_LSApplicationCategoryType: "public.app-category.weather"
+    ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+    CODE_SIGN_STYLE: Automatic
+    DEVELOPMENT_TEAM: ""
+  configs:
+    Debug:
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+      ENABLE_TESTABILITY: YES
+      SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+    Release:
+      SWIFT_OPTIMIZATION_LEVEL: "-Osize"
+      SWIFT_COMPILATION_MODE: wholemodule
+
+targets:
+  WCPSSAlerts:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+      - path: Core
+      - path: Features
+      - path: DesignSystem
+      - path: Resources
+    settings:
+      base:
+        INFOPLIST_FILE: App/Config/Info.plist
+        CODE_SIGN_ENTITLEMENTS: App/Config/WCPSSAlerts.entitlements
+    entitlements:
+      path: App/Config/WCPSSAlerts.entitlements
+      properties:
+        aps-environment: development
+        com.apple.developer.usernotifications.time-sensitive: true
+    preBuildScripts:
+      - name: SwiftLint
+        script: |
+          if which swiftlint > /dev/null; then
+            swiftlint
+          else
+            echo "warning: SwiftLint not installed"
+          fi
+        basedOnDependencyAnalysis: false
+
+  WCPSSAlertsTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Tests
+    dependencies:
+      - target: WCPSSAlerts
+
+schemes:
+  WCPSSAlerts:
+    build:
+      targets:
+        WCPSSAlerts: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - WCPSSAlertsTests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
