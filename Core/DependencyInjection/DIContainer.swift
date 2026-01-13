@@ -10,6 +10,7 @@ public final class DIContainer {
     public lazy var notificationService = NotificationService()
     public lazy var weatherService = WeatherService()
     public lazy var apiClient = APIClient()
+    public lazy var deduplicationManager = AlertDeduplicationManager()
 
     private init() {}
 }

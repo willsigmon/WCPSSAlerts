@@ -1,6 +1,6 @@
 import Foundation
 
-struct ClosureAlert: Identifiable, Codable, Sendable {
+struct ClosureAlert: Identifiable, Codable, Sendable, Equatable {
     let id: String
     let district: District
     let status: ClosureStatus
@@ -14,17 +14,34 @@ struct ClosureAlert: Identifiable, Codable, Sendable {
     let timestamp: Date
     var isRead: Bool = false
 
-    struct CriticalWindow: Codable, Sendable {
+    struct CriticalWindow: Codable, Sendable, Equatable {
         let start: Date
         let end: Date
     }
 
-    struct WeatherFactors: Codable, Sendable {
+    struct WeatherFactors: Codable, Sendable, Equatable {
         let temperature: Double
         let snowfall: Double
         let windSpeed: Double
         let iceRisk: IceRisk
         let precipitation: Double
+    }
+
+    /// Determines if this alert represents a significant change from another
+    func hasSignificantChange(from other: ClosureAlert?) -> Bool {
+        guard let other = other else { return true }
+
+        // Status change is always significant
+        if status != other.status {
+            return true
+        }
+
+        // Probability change of 15+ points is significant
+        if abs(probability - other.probability) >= 15 {
+            return true
+        }
+
+        return false
     }
 }
 
