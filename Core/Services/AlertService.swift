@@ -7,6 +7,11 @@ public final class AlertService {
     private var cacheTimestamp: Date?
     private let cacheDuration: TimeInterval = 300 // 5 minutes
 
+    // Alert caching
+    private var cachedAlerts: [ClosureAlert] = []
+    private var alertsCacheTimestamp: Date?
+    private let alertsCacheDuration: TimeInterval = 120 // 2 minutes
+
     init(apiClient: APIClient? = nil) {
         self.apiClient = apiClient ?? DIContainer.shared.apiClient
     }
@@ -32,6 +37,24 @@ public final class AlertService {
         return response.prediction
     }
 
+    /// Fetches prediction and sends notification if significant change detected
+    func fetchPredictionWithNotification(
+        for district: District,
+        notificationService: NotificationService
+    ) async throws -> ClosurePrediction {
+        let prediction = try await fetchPrediction(forceRefresh: true)
+
+        // Only notify if authorized
+        if await notificationService.isAuthorized() {
+            await notificationService.notifyIfSignificant(
+                prediction: prediction,
+                district: district
+            )
+        }
+
+        return prediction
+    }
+
     // MARK: - All Districts
     func fetchAllDistricts() async throws -> [DistrictPrediction] {
         // For now, fetch the main prediction and create district predictions
@@ -47,14 +70,75 @@ public final class AlertService {
     }
 
     // MARK: - Alerts History
-    func fetchRecentAlerts() async throws -> [ClosureAlert] {
-        // Placeholder - would fetch from /api/alerts
-        return []
+    func fetchRecentAlerts(forceRefresh: Bool = false) async throws -> [ClosureAlert] {
+        // Return cached if valid
+        if !forceRefresh,
+           !cachedAlerts.isEmpty,
+           let timestamp = alertsCacheTimestamp,
+           Date().timeIntervalSince(timestamp) < alertsCacheDuration {
+            return cachedAlerts
+        }
+
+        // Try to fetch from API
+        do {
+            struct AlertsResponse: Decodable {
+                let alerts: [ClosureAlert]
+            }
+
+            let response: AlertsResponse = try await apiClient.get("/alerts")
+            cachedAlerts = response.alerts
+            alertsCacheTimestamp = Date()
+            return response.alerts
+        } catch {
+            // If API fails, return empty array (graceful degradation)
+            // This prevents the app from crashing if /alerts endpoint isn't ready
+            print("Failed to fetch alerts from API: \(error)")
+            return cachedAlerts.isEmpty ? [] : cachedAlerts
+        }
+    }
+
+    /// Fetches alerts and sends notifications for any new ones
+    func fetchAlertsWithNotification(
+        notificationService: NotificationService
+    ) async throws -> [ClosureAlert] {
+        let alerts = try await fetchRecentAlerts(forceRefresh: true)
+
+        // Only notify if authorized
+        if await notificationService.isAuthorized() {
+            for alert in alerts {
+                await notificationService.notifyIfNew(alert: alert)
+            }
+        }
+
+        return alerts
     }
 
     // MARK: - Cache Management
     func clearCache() {
         cachedPrediction = nil
         cacheTimestamp = nil
+        cachedAlerts = []
+        alertsCacheTimestamp = nil
+    }
+
+    func clearPredictionCache() {
+        cachedPrediction = nil
+        cacheTimestamp = nil
+    }
+
+    func clearAlertsCache() {
+        cachedAlerts = []
+        alertsCacheTimestamp = nil
+    }
+
+    // MARK: - Cache State
+    var hasCachedPrediction: Bool {
+        guard let timestamp = cacheTimestamp else { return false }
+        return Date().timeIntervalSince(timestamp) < cacheDuration
+    }
+
+    var hasCachedAlerts: Bool {
+        guard let timestamp = alertsCacheTimestamp else { return false }
+        return Date().timeIntervalSince(timestamp) < alertsCacheDuration
     }
 }

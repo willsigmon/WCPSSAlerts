@@ -175,16 +175,87 @@ struct DistrictPickerSheet: View {
     }
 }
 
-// Placeholder views
 struct NotificationPreferencesView: View {
+    @Environment(AppViewModel.self) private var appViewModel
+    @State private var notifyForSelectedDistrictOnly = true
+    @State private var probabilityThreshold = 40
+    @State private var showResetConfirmation = false
+
     var body: some View {
         List {
-            Toggle("Closure Announcements", isOn: .constant(true))
-            Toggle("Delay Announcements", isOn: .constant(true))
-            Toggle("Prediction Changes (>20%)", isOn: .constant(true))
-            Toggle("Weather Alerts", isOn: .constant(false))
+            Section {
+                Toggle(isOn: $notifyForSelectedDistrictOnly) {
+                    VStack(alignment: .leading, spacing: SpacingTokens.xxs) {
+                        Text("Selected District Only")
+                        Text("Only receive alerts for \(appViewModel.selectedDistrict.abbreviation)")
+                            .font(TypographyTokens.labelSmall)
+                            .foregroundColor(.secondary)
+                    }
+                }
+                .onChange(of: notifyForSelectedDistrictOnly) { _, newValue in
+                    appViewModel.setNotifyForSelectedDistrictOnly(newValue)
+                }
+            } header: {
+                Text("District Alerts")
+            }
+
+            Section {
+                VStack(alignment: .leading, spacing: SpacingTokens.sm) {
+                    HStack {
+                        Text("Probability Threshold")
+                        Spacer()
+                        Text("\(probabilityThreshold)%")
+                            .font(TypographyTokens.labelMedium)
+                            .foregroundColor(ColorTokens.primary)
+                    }
+
+                    Slider(value: Binding(
+                        get: { Double(probabilityThreshold) },
+                        set: { probabilityThreshold = Int($0) }
+                    ), in: 20...80, step: 10)
+                    .onChange(of: probabilityThreshold) { _, newValue in
+                        appViewModel.setNotifyOnProbabilityThreshold(newValue)
+                    }
+
+                    Text("Get notified when closure probability reaches \(probabilityThreshold)% or higher")
+                        .font(TypographyTokens.labelSmall)
+                        .foregroundColor(.secondary)
+                }
+            } header: {
+                Text("Notification Threshold")
+            } footer: {
+                Text("Lower thresholds mean more frequent notifications. Higher thresholds only alert for likely closures.")
+            }
+
+            Section {
+                Text("Notifications are automatically deduplicated to prevent repeated alerts for the same prediction.")
+                    .font(TypographyTokens.bodySmall)
+                    .foregroundColor(.secondary)
+
+                Button(role: .destructive) {
+                    showResetConfirmation = true
+                } label: {
+                    Label("Reset Notification History", systemImage: "arrow.counterclockwise")
+                }
+            } header: {
+                Text("Deduplication")
+            } footer: {
+                Text("Resetting allows you to receive notifications for predictions you've already been notified about.")
+            }
         }
         .navigationTitle("Notification Preferences")
+        .onAppear {
+            notifyForSelectedDistrictOnly = appViewModel.notifyForSelectedDistrictOnly
+            probabilityThreshold = appViewModel.notifyOnProbabilityThreshold
+        }
+        .alert("Reset Notification History?", isPresented: $showResetConfirmation) {
+            Button("Cancel", role: .cancel) {}
+            Button("Reset", role: .destructive) {
+                appViewModel.resetNotificationTracking()
+            }
+        } message: {
+            Text("This will allow you to receive notifications for all predictions again, including ones you've already been notified about.")
+        }
     }
 }
 
