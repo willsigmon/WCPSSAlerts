@@ -1,0 +1,565 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0584038E67B64AC5F9D85760 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF94AD028AC09D06EE5512E /* APIClient.swift */; };
+		08A17C20B93A0304F32A3D64 /* WCPSSAlertsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795143BB73CE900430E43BA5 /* WCPSSAlertsApp.swift */; };
+		09BBEF2A30191ECAAD2DC436 /* SpacingTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F771BBFEB9388B3E7556A5 /* SpacingTokens.swift */; };
+		0B7C8A2DE91D23D698A1CFE1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D013C104F6D5A5ED7D0B3F26 /* ContentView.swift */; };
+		1A8CB4ACE216243EBCAB6C37 /* AlertDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 298E94B18A1D5124A6606398 /* AlertDetailView.swift */; };
+		2081C2E4C7248E3C7285C49E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C891D57B472B35105F6080B7 /* LoadingView.swift */; };
+		3000A57E4818B037FF8D7EA4 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E3D35739B7119BD46346F1 /* DashboardView.swift */; };
+		329392BD22F10081DAF72EB3 /* WCPSSAlertsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC86CB1801A13BECF7CD6D3 /* WCPSSAlertsTests.swift */; };
+		3412C6BFB3593AAB01710A37 /* StatusBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1ED319EBFB3671A9AC8EF54 /* StatusBadge.swift */; };
+		3605AB5BD20E7658DDF34CCC /* TypographyTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955D66C2C0100023C8672D0A /* TypographyTokens.swift */; };
+		41751DEE6861C2F6F45B636C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3513BDBBF5D76BF34396331E /* SettingsView.swift */; };
+		574531B577D32F209F92265A /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07E9919E7B012D2EF1C4438 /* DashboardViewModel.swift */; };
+		68A147BB0D6FC3DAD78086F4 /* District.swift in Sources */ = {isa = PBXBuildFile; fileRef = 390701FB7F148DB77B57DE8E /* District.swift */; };
+		6A33C8F713EA191528574CCC /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3028D8A807B60028FA0B7E52 /* GlassCard.swift */; };
+		7AD4ADE49DAD33FE190F342E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF3230758D4A4AA36C085267 /* Assets.xcassets */; };
+		877D6AB6CB08A3B6C28CBED8 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FAE1EE931752FAFF8DF2D9 /* WeatherService.swift */; };
+		A5534056C4BDCF9FD1930F84 /* AlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719CD522E6E06DD96FB0234 /* AlertService.swift */; };
+		A6586F4F642104C4E87B7393 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8D79317F27BC5096AAD534C /* DIContainer.swift */; };
+		B5A934D6E8213A0A927065F4 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE031C383E5F2E1BF075C10 /* MainTabView.swift */; };
+		BC847C72A148AAA67EA69784 /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47E1B1BD9C71521931402C22 /* Prediction.swift */; };
+		C00B821CE91B3028403FF097 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE28EDA36579957BCEFF498 /* AppViewModel.swift */; };
+		C2BD5EFB1085A0B6B18E2202 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29591ACDF30C00AED69A3F9C /* MapView.swift */; };
+		C959C1D6403126B29355EC0E /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF7B930C9484855316152C /* NotificationService.swift */; };
+		D349DC531B92204751D6C868 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE9A12619F3E9D9A6C09E5C /* Alert.swift */; };
+		E02EFC098CF5C79D67D9EC2E /* ProbabilityGauge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AAA134763D2EA3AC705FD /* ProbabilityGauge.swift */; };
+		E40EEB711FEE5C6924BD353B /* AlertsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CC574ADC2CC119D3E07284 /* AlertsViewModel.swift */; };
+		E96D0BA280E1E0F38D38C0D8 /* ColorTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE08BE28B52905E8B106466 /* ColorTokens.swift */; };
+		ECE34985116E5D45DBAFF0A3 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F7663891137CB80DAA6DE9 /* OnboardingView.swift */; };
+		F5BF7C25CA837A2BEBAD2A2B /* AlertsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574F070C6AC8E082AA17EB0B /* AlertsListView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B6A205B246A48BC9C079952 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 35A3353D7EFEE7EFAD7B4EBF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC3DD2EF96E744004958AE39;
+			remoteInfo = WCPSSAlerts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02F7663891137CB80DAA6DE9 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		03E3D35739B7119BD46346F1 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		1719CD522E6E06DD96FB0234 /* AlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertService.swift; sourceTree = "<group>"; };
+		28DF7B930C9484855316152C /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		29591ACDF30C00AED69A3F9C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		298E94B18A1D5124A6606398 /* AlertDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDetailView.swift; sourceTree = "<group>"; };
+		2F2D10E108728280B5D965D0 /* WCPSSAlerts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WCPSSAlerts.entitlements; sourceTree = "<group>"; };
+		2FC86CB1801A13BECF7CD6D3 /* WCPSSAlertsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCPSSAlertsTests.swift; sourceTree = "<group>"; };
+		3028D8A807B60028FA0B7E52 /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
+		320AAA134763D2EA3AC705FD /* ProbabilityGauge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProbabilityGauge.swift; sourceTree = "<group>"; };
+		3513BDBBF5D76BF34396331E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		390701FB7F148DB77B57DE8E /* District.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = District.swift; sourceTree = "<group>"; };
+		3CE031C383E5F2E1BF075C10 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		47E1B1BD9C71521931402C22 /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
+		492F7857B757F2B613F45897 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		574F070C6AC8E082AA17EB0B /* AlertsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsListView.swift; sourceTree = "<group>"; };
+		71FAE1EE931752FAFF8DF2D9 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		74CC574ADC2CC119D3E07284 /* AlertsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertsViewModel.swift; sourceTree = "<group>"; };
+		795143BB73CE900430E43BA5 /* WCPSSAlertsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCPSSAlertsApp.swift; sourceTree = "<group>"; };
+		7CDEDAD00377E06591E3E2BA /* WCPSSAlertsTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = WCPSSAlertsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DE9A12619F3E9D9A6C09E5C /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		955D66C2C0100023C8672D0A /* TypographyTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypographyTokens.swift; sourceTree = "<group>"; };
+		9FE28EDA36579957BCEFF498 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
+		A8D79317F27BC5096AAD534C /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		AAF94AD028AC09D06EE5512E /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		B1ED319EBFB3671A9AC8EF54 /* StatusBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBadge.swift; sourceTree = "<group>"; };
+		C891D57B472B35105F6080B7 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		CFE08BE28B52905E8B106466 /* ColorTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTokens.swift; sourceTree = "<group>"; };
+		D013C104F6D5A5ED7D0B3F26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D5F771BBFEB9388B3E7556A5 /* SpacingTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacingTokens.swift; sourceTree = "<group>"; };
+		DF3230758D4A4AA36C085267 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E69588EBD4638FDC2363BF65 /* WCPSSAlerts.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = WCPSSAlerts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F07E9919E7B012D2EF1C4438 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1865269AFADACBD135B084DF /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				A8D79317F27BC5096AAD534C /* DIContainer.swift */,
+			);
+			path = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		2D696FB3579D1877E02B6D8C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				1865269AFADACBD135B084DF /* DependencyInjection */,
+				525F28F55E5217AFF3DC1578 /* Extensions */,
+				6CD281C1079A69AAC6FCBFAF /* Models */,
+				67D34215289BEC9929C1366A /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		30DD88C6E9459B7AE4795BBF /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		356558E73F9CFBE1B794ADF8 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				29591ACDF30C00AED69A3F9C /* MapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		383861BF3C73EDAA91909B95 = {
+			isa = PBXGroup;
+			children = (
+				940B90BD1585BA8742C7170E /* App */,
+				2D696FB3579D1877E02B6D8C /* Core */,
+				7BA351901BE887690C75D494 /* DesignSystem */,
+				8F7FF23DA5DAFC160B899053 /* Features */,
+				9948A34F2E559A83A5DFCAB8 /* Resources */,
+				6DD66F1371C3A634A7214B46 /* Tests */,
+				EB07B4696220E90967D6EAF9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		506591241000D8134C802985 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		525F28F55E5217AFF3DC1578 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		623E065EA9FB683E0903BBEE /* Tokens */ = {
+			isa = PBXGroup;
+			children = (
+				CFE08BE28B52905E8B106466 /* ColorTokens.swift */,
+				D5F771BBFEB9388B3E7556A5 /* SpacingTokens.swift */,
+				955D66C2C0100023C8672D0A /* TypographyTokens.swift */,
+			);
+			path = Tokens;
+			sourceTree = "<group>";
+		};
+		67D34215289BEC9929C1366A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1719CD522E6E06DD96FB0234 /* AlertService.swift */,
+				AAF94AD028AC09D06EE5512E /* APIClient.swift */,
+				28DF7B930C9484855316152C /* NotificationService.swift */,
+				71FAE1EE931752FAFF8DF2D9 /* WeatherService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6CD281C1079A69AAC6FCBFAF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7DE9A12619F3E9D9A6C09E5C /* Alert.swift */,
+				390701FB7F148DB77B57DE8E /* District.swift */,
+				47E1B1BD9C71521931402C22 /* Prediction.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6CF938869CF7F4187D04C5A0 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3028D8A807B60028FA0B7E52 /* GlassCard.swift */,
+				C891D57B472B35105F6080B7 /* LoadingView.swift */,
+				320AAA134763D2EA3AC705FD /* ProbabilityGauge.swift */,
+				B1ED319EBFB3671A9AC8EF54 /* StatusBadge.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		6DD66F1371C3A634A7214B46 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2FC86CB1801A13BECF7CD6D3 /* WCPSSAlertsTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		7BA351901BE887690C75D494 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				6CF938869CF7F4187D04C5A0 /* Components */,
+				30DD88C6E9459B7AE4795BBF /* Modifiers */,
+				623E065EA9FB683E0903BBEE /* Tokens */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		8F7FF23DA5DAFC160B899053 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				AD05AD842E59A15E94BB9EA2 /* Alerts */,
+				E14370D675AFAFCB7F2E18CF /* Dashboard */,
+				356558E73F9CFBE1B794ADF8 /* Map */,
+				E8714421312F9F04E1EA244C /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		940B90BD1585BA8742C7170E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9FE28EDA36579957BCEFF498 /* AppViewModel.swift */,
+				D013C104F6D5A5ED7D0B3F26 /* ContentView.swift */,
+				3CE031C383E5F2E1BF075C10 /* MainTabView.swift */,
+				795143BB73CE900430E43BA5 /* WCPSSAlertsApp.swift */,
+				EEA8FF848CD6B01A3DFDC1B1 /* Config */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		9948A34F2E559A83A5DFCAB8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DF3230758D4A4AA36C085267 /* Assets.xcassets */,
+				506591241000D8134C802985 /* Localization */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AD05AD842E59A15E94BB9EA2 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				298E94B18A1D5124A6606398 /* AlertDetailView.swift */,
+				574F070C6AC8E082AA17EB0B /* AlertsListView.swift */,
+				74CC574ADC2CC119D3E07284 /* AlertsViewModel.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		E14370D675AFAFCB7F2E18CF /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				03E3D35739B7119BD46346F1 /* DashboardView.swift */,
+				F07E9919E7B012D2EF1C4438 /* DashboardViewModel.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		E8714421312F9F04E1EA244C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				02F7663891137CB80DAA6DE9 /* OnboardingView.swift */,
+				3513BDBBF5D76BF34396331E /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		EB07B4696220E90967D6EAF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E69588EBD4638FDC2363BF65 /* WCPSSAlerts.app */,
+				7CDEDAD00377E06591E3E2BA /* WCPSSAlertsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEA8FF848CD6B01A3DFDC1B1 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				492F7857B757F2B613F45897 /* Info.plist */,
+				2F2D10E108728280B5D965D0 /* WCPSSAlerts.entitlements */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F9210B2E092D3EF2CABA41E /* WCPSSAlertsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3442D641DF03F0101CCFB24 /* Build configuration list for PBXNativeTarget "WCPSSAlertsTests" */;
+			buildPhases = (
+				3129D3431A1D7A4FA0445DA8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				72ED0E3F453373AC5FCD0BB9 /* PBXTargetDependency */,
+			);
+			name = WCPSSAlertsTests;
+			packageProductDependencies = (
+			);
+			productName = WCPSSAlertsTests;
+			productReference = 7CDEDAD00377E06591E3E2BA /* WCPSSAlertsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AC3DD2EF96E744004958AE39 /* WCPSSAlerts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48237A4BFC1736789512584E /* Build configuration list for PBXNativeTarget "WCPSSAlerts" */;
+			buildPhases = (
+				82F5A589CFD84D9ED7059378 /* SwiftLint */,
+				52D3EFC8F31CFCB3F5C68B1D /* Sources */,
+				BB213F9EDF62419538776DD4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WCPSSAlerts;
+			packageProductDependencies = (
+			);
+			productName = WCPSSAlerts;
+			productReference = E69588EBD4638FDC2363BF65 /* WCPSSAlerts.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		35A3353D7EFEE7EFAD7B4EBF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					5F9210B2E092D3EF2CABA41E = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+					AC3DD2EF96E744004958AE39 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 80EB7E5E2D38B7E2D8A73C25 /* Build configuration list for PBXProject "WCPSSAlerts" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 383861BF3C73EDAA91909B95;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 54;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC3DD2EF96E744004958AE39 /* WCPSSAlerts */,
+				5F9210B2E092D3EF2CABA41E /* WCPSSAlertsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB213F9EDF62419538776DD4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7AD4ADE49DAD33FE190F342E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		82F5A589CFD84D9ED7059378 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3129D3431A1D7A4FA0445DA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				329392BD22F10081DAF72EB3 /* WCPSSAlertsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52D3EFC8F31CFCB3F5C68B1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0584038E67B64AC5F9D85760 /* APIClient.swift in Sources */,
+				D349DC531B92204751D6C868 /* Alert.swift in Sources */,
+				1A8CB4ACE216243EBCAB6C37 /* AlertDetailView.swift in Sources */,
+				A5534056C4BDCF9FD1930F84 /* AlertService.swift in Sources */,
+				F5BF7C25CA837A2BEBAD2A2B /* AlertsListView.swift in Sources */,
+				E40EEB711FEE5C6924BD353B /* AlertsViewModel.swift in Sources */,
+				C00B821CE91B3028403FF097 /* AppViewModel.swift in Sources */,
+				E96D0BA280E1E0F38D38C0D8 /* ColorTokens.swift in Sources */,
+				0B7C8A2DE91D23D698A1CFE1 /* ContentView.swift in Sources */,
+				A6586F4F642104C4E87B7393 /* DIContainer.swift in Sources */,
+				3000A57E4818B037FF8D7EA4 /* DashboardView.swift in Sources */,
+				574531B577D32F209F92265A /* DashboardViewModel.swift in Sources */,
+				68A147BB0D6FC3DAD78086F4 /* District.swift in Sources */,
+				6A33C8F713EA191528574CCC /* GlassCard.swift in Sources */,
+				2081C2E4C7248E3C7285C49E /* LoadingView.swift in Sources */,
+				B5A934D6E8213A0A927065F4 /* MainTabView.swift in Sources */,
+				C2BD5EFB1085A0B6B18E2202 /* MapView.swift in Sources */,
+				C959C1D6403126B29355EC0E /* NotificationService.swift in Sources */,
+				ECE34985116E5D45DBAFF0A3 /* OnboardingView.swift in Sources */,
+				BC847C72A148AAA67EA69784 /* Prediction.swift in Sources */,
+				E02EFC098CF5C79D67D9EC2E /* ProbabilityGauge.swift in Sources */,
+				41751DEE6861C2F6F45B636C /* SettingsView.swift in Sources */,
+				09BBEF2A30191ECAAD2DC436 /* SpacingTokens.swift in Sources */,
+				3412C6BFB3593AAB01710A37 /* StatusBadge.swift in Sources */,
+				3605AB5BD20E7658DDF34CCC /* TypographyTokens.swift in Sources */,
+				08A17C20B93A0304F32A3D64 /* WCPSSAlertsApp.swift in Sources */,
+				877D6AB6CB08A3B6C28CBED8 /* WeatherService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		72ED0E3F453373AC5FCD0BB9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC3DD2EF96E744004958AE39 /* WCPSSAlerts */;
+			targetProxy = 3B6A205B246A48BC9C079952 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0AD98520C5415A2A8F31BBC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "WCPSS Alerts";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_NAME = "WCPSS Alerts";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Osize";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		2A3A1A15528723C17689F671 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.wcpss.WCPSSAlertsTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WCPSSAlerts.app/WCPSSAlerts";
+			};
+			name = Release;
+		};
+		75E1F12FFEE023632E11036F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = App/Config/WCPSSAlerts.entitlements;
+				INFOPLIST_FILE = App/Config/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wcpss.WCPSSAlerts;
+			};
+			name = Debug;
+		};
+		E05E50FF7E3C6205B4C14BEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "WCPSS Alerts";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_NAME = "WCPSS Alerts";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		ED0901297172132C7C940307 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = App/Config/WCPSSAlerts.entitlements;
+				INFOPLIST_FILE = App/Config/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wcpss.WCPSSAlerts;
+			};
+			name = Release;
+		};
+		F047D8B60017440DFC55D632 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_BUNDLE_IDENTIFIER = com.wcpss.WCPSSAlertsTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WCPSSAlerts.app/WCPSSAlerts";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48237A4BFC1736789512584E /* Build configuration list for PBXNativeTarget "WCPSSAlerts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75E1F12FFEE023632E11036F /* Debug */,
+				ED0901297172132C7C940307 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		80EB7E5E2D38B7E2D8A73C25 /* Build configuration list for PBXProject "WCPSSAlerts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E05E50FF7E3C6205B4C14BEF /* Debug */,
+				0AD98520C5415A2A8F31BBC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F3442D641DF03F0101CCFB24 /* Build configuration list for PBXNativeTarget "WCPSSAlertsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F047D8B60017440DFC55D632 /* Debug */,
+				2A3A1A15528723C17689F671 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 35A3353D7EFEE7EFAD7B4EBF /* Project object */;
+}
